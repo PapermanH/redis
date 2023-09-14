@@ -1,0 +1,47 @@
+/*
+Navicat Premium Data Transfer
+
+Source Server         : 192.168.0.100
+Source Server Type    : MySQL
+Source Server Version : 80027
+Source Host           : 192.168.0.100:3306
+Source Schema         : demo
+
+Target Server Type    : MySQL
+Target Server Version : 80027
+File Encoding         : 65001
+
+Date: 12/09/2023 18:42:30
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for user
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user`  (
+`id` int NOT NULL,
+`device_id` int NOT NULL,
+`gender` varchar(14) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+`age` int NULL DEFAULT NULL,
+`university` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+`gpa` float NULL DEFAULT NULL,
+`active_days_within_30` int NULL DEFAULT NULL,
+`question_cnt` int NULL DEFAULT NULL,
+`answer_cnt` int NULL DEFAULT NULL
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+INSERT INTO `user` VALUES (1, 2138, 'male', 21, '北京大学', 3.4, 7, 2, 12);
+INSERT INTO `user` VALUES (2, 3214, 'male', NULL, '复旦大学', 4, 15, 5, 25);
+INSERT INTO `user` VALUES (3, 6543, 'female', 20, '北京大学', 3.2, 12, 3, 30);
+INSERT INTO `user` VALUES (4, 2315, 'female', 23, '浙江大学', 3.6, 5, 1, 2);
+INSERT INTO `user` VALUES (5, 5432, 'male', 25, '山东大学', 3.8, 20, 15, 70);
+INSERT INTO `user` VALUES (6, 2131, 'male', 28, '山东大学', 3.3, 15, 7, 13);
+INSERT INTO `user` VALUES (7, 4321, 'male', 28, '复旦大学', 3.6, 9, 6, 52);
+
+SET FOREIGN_KEY_CHECKS = 1;
